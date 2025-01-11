@@ -1,0 +1,203 @@
+/* General Styling */
+body {
+  margin: 0;
+  background: url("../src/Assets/image 950.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly ;
+  align-items: center;
+  font-family: 'Oxlaide'
+  /* height: 100vh;
+  color: #333; */
+  }
+  
+  .game-container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 1s ease-in;
+    color: #fff;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:48px
+  }
+
+  .image_header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  .image-container {
+    position: relative;
+  }
+
+  
+  .target-color{position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 45%; /* Center the text vertically */
+    left: 50%; /* Center the text horizontally */
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2.5rem;
+  }
+
+  .score {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%; /* Center the text vertically */
+    left: 35%; /* Center the text horizontally */
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2.5rem;
+  }
+
+  /* Timer Styling */
+  .timer-wrapper {
+    position: relative;
+    width: fit-content; /* Matches the size of the container */
+    height: auto;
+  }
+  
+  .timer-background {
+    position: relative;
+    width: 330px; /* Adjust width to suit your needs */
+    height: 50px; /* Adjust height to match the image aspect ratio */
+    background-size: contain; /* Ensures the image scales proportionally */
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    overflow: hidden; /* Clips any overflowing content */
+  }
+  
+  .timer-slider {
+    position: absolute;
+    top: 50%; /* Align vertically within the gray area */
+    left: 3%; /* Align horizontally within the gray area */
+    transform: translateY(-50%);
+    height: 10px; /* Match the height of the gray bar */
+    width: 0; /* Controlled dynamically */
+    background: linear-gradient(to right, #4BF20E, #B2FF2D);
+    border-radius: 2px;
+    transition: width 0.1s linear;
+  }
+  
+  
+  
+  /* Target Color */
+ 
+  .color-image {
+    transition: transform 0.3s ease;
+  }
+  
+  .color-image.clicked {
+    transform: scale(0.5); /* Slightly enlarge the image */
+  }
+  
+  /* Colors Container */
+  .colors-container {
+    position: absolute; /* Place it on top of the image */
+    top: 64%; /* Adjust top positioning */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center exactly */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .color-box {
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  
+  /* Game Over Popup */
+  .game-over-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+
+  .game-over-popup .game-over-text {
+    font-size: 60px;
+  }
+  
+  .game-over-popup .score-text {
+    font-size: 40px;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.8);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+
+  /* Number of Colors Selection */
+.num-colors-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.num-colors-buttons button {
+  background: #ff5722;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.num-colors-buttons button:hover {
+  background: #e64a19;
+}
+
+.start-game-btn {
+  margin-top: 20px;
+  background: #ff5722;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.start-game-btn:hover {
+  background: #e64a19;
+}
